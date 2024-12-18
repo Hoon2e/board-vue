@@ -9,5 +9,9 @@ export const useUserStore = defineStore('user', () => {
     user.value = data
   }
 
-  return { user: readonly(user), setUser }
+  function $reset() {
+    user.value = null
+  }
+
+  return { user: readonly(user), setUser, $reset }
 })
